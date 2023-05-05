@@ -13,11 +13,12 @@ export async function connectToDB(){
 
 }
 export async function getDataFromDB(dateString) {
-    const client = await connectToDB()
-    const db = client.db(process.env.DB_NAME)
-    const collection = db.collection('dailyhoroscopes')
-    const result = await collection.find({ date: dateString}).toArray()
-    client.close()
+  const client = await connectToDB()
+  console.log(client)
+  const db = client.db(process.env.DB_NAME)
+  const collection = db.collection('dailyhoroscopes')
+  const result = await collection.find({ date: dateString}).toArray()
+  client.close()
     return JSON.parse(JSON.stringify(result))
 }
 
