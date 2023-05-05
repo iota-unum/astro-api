@@ -13,7 +13,7 @@ let imgBuffers = []
 
     const imgBuffer = await generateSingleImage(signName, horoscope);
     console.log("image generated");
-    await saveImgtoFolder("twitterCards", signName, imgBuffer);
+    // await saveImgtoFolder("twitterCards", signName, imgBuffer);
     imgBuffers.push({signName, imgBuffer})
   }
   console.log("all images saved");
